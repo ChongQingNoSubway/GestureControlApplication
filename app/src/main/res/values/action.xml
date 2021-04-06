@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnerclass">
+        <item>Turn On Light</item>
+        <item>Turn Off Light</item>
+        <item>Turn On Fan</item>
+        <item>Turn Off Fan</item>
+        <item>Increase Fan Speed</item>
+        <item>Decrease Fan Speed</item>
+        <item>Set Thermostat to specified temperature</item>
+        <item>1</item>
+        <item> 2 </item>
+        <item> 3 </item>
+        <item> 4 </item>
+        <item> 5 </item>
+        <item> 6 </item>
+        <item> 7 </item>
+        <item> 8 </item>
+        <item> 9 </item>
+
+
+    </string-array>
+
+</resources>
