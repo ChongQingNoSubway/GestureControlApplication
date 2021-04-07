@@ -55,7 +55,7 @@ public class thirdActivity extends AppCompatActivity{
     Uri recordedVideoUri;
     String gestureName;
     private String selected;
-    private static String serverAddress = "http://172.20.10.2/android/SignSavvyVideos";
+    private static String serverAddress = "http://127.0.0.1:8088/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -302,7 +302,7 @@ public class thirdActivity extends AppCompatActivity{
                 Log.d("VideoSource",videoSource.getName());
                 FileInputStream inputStream = new FileInputStream(videoSource);
                 URL serverURL = new URL(
-                        "http://127.0.0.1:8088/predic");
+                        "https://192.168.0.81:8088/predic");
                 httpConn = (HttpURLConnection) serverURL.openConnection();
                 httpConn.setUseCaches(false);
                 httpConn.setDoOutput(true); // indicates POST method
