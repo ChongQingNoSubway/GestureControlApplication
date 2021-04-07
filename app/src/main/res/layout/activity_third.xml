@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:id="@+id/screen_3"
+    android:layout_centerHorizontal="true">
+
+    <Button
+        android:id="@+id/capture_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:onClick="captureVideo"
+        android:text="Capture" />
+
+    <Button
+        android:id="@+id/upload_video"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="599dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="84dp"
+        android:layout_toRightOf="@+id/capture_video"
+        android:onClick="uploadVideo"
+        android:text="Upload" />
+
+    <Button
+        android:id="@+id/return_to_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/capture_video"
+        android:layout_marginTop="551dp"
+        android:layout_marginRight="32dp"
+        android:onClick="backToMain"
+        android:text="Learn new gesture" />
+
+</RelativeLayout>

@@ -2,6 +2,7 @@ package com.example.gesturecontrolapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,14 +21,14 @@ public class secondActivity extends AppCompatActivity {
     private String videoName;
     private TextView text;
     private int count;
-    private Button replay;
+    private Button replay, practice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         selected = getIntent().getStringExtra("selected");
         setContentView(R.layout.activity_second);
         replay = (Button) findViewById(R.id.reply);
-
+        practice = (Button) findViewById(R.id.pra);
         videoShow = (VideoView)findViewById(R.id.videoView);
         videoName =  Util.getVideoName(selected);
         VideoPath = "android.resource://" + getPackageName() + "/raw/"+videoName;
@@ -41,7 +42,7 @@ public class secondActivity extends AppCompatActivity {
 //            }
 //        });
         videoShow.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            int maxCount = 4;
+            int maxCount = 3;
             @Override
             public void onCompletion(MediaPlayer mp) {
                 if(count < maxCount) {
@@ -63,5 +64,16 @@ public class secondActivity extends AppCompatActivity {
                 }
             }
         });
+
+        practice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(secondActivity.this,thirdActivity.class);
+
+                intent.putExtra("selected",Util.getActionName(selected));
+                startActivity(intent);
+            }
+        });
+
     }
 }
