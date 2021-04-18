@@ -22,14 +22,12 @@ public class MainActivity extends AppCompatActivity {
 
         spinner = (Spinner) findViewById(R.id.spinner);
         Start = (Button) findViewById(R.id.start);
-        Text  = (TextView) findViewById(R.id.textV);
         // spinner
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 selectedValue = (String) parent.getItemAtPosition(position);
-                Text.setText(selectedValue);
             }
 
             @Override
