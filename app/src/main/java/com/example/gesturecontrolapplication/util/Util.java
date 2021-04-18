@@ -30,7 +30,7 @@ public class Util {
         if(Name.equalsIgnoreCase( "Decrease Fan Speed")) return "FanDown";
         if(Name.equalsIgnoreCase("Set Thermostat to specified temperature")) return "SetThermo";
         else {
-            return Name;
+            return"Num" + Name;
         }
 
     }

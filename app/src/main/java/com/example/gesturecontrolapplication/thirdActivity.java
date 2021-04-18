@@ -55,12 +55,13 @@ public class thirdActivity extends AppCompatActivity{
     Uri recordedVideoUri;
     String gestureName;
     private String selected;
+    private String username;
     private static String serverAddress = "http://192.168.0.81:8088";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
-
+        username = "WenhuiZhu";
         Intent gesturePracticeIntent = getIntent();
         gestureName = getIntent().getStringExtra("selected");
 
@@ -93,6 +94,7 @@ public class thirdActivity extends AppCompatActivity{
             File gestureRecordFile = new File(actualPath);
             String newFileName = actualPath.substring(0,actualPath.lastIndexOf("/"))+"/"+
                     gestureName+".mp4";
+//            String newFileName = gestureName + "_PRACTICE_" +  "_" + username + ".mp4";
             try{
                 FileUtils.copyFile(gestureRecordFile, new File(newFileName));
             }catch(Exception e){
@@ -308,6 +310,7 @@ public class thirdActivity extends AppCompatActivity{
                 httpConn.setDoOutput(true); // indicates POST method
                 httpConn.setDoInput(true);
                 httpConn.setRequestMethod("POST");
+                httpConn.addRequestProperty("gesture",gestureName);
                 httpConn.setRequestProperty("Connection", "Keep-Alive");
                 httpConn.setRequestProperty("Cache-Control", "no-cache");
                 httpConn.setRequestProperty("ENCTYPE", "multipart/form-data");
